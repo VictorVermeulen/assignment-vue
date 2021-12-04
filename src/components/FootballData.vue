@@ -26,7 +26,7 @@ export default {
     }
 
     axios
-      .get('http:localhost:8080/conferences', config)
+      .get('http:localhost:8080/teams?id=3', config)
       .then((response) => console.log(response))
       .catch((error) => console.log(error))
   },
