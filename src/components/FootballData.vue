@@ -15,9 +15,20 @@ export default {
     }
   },
   mounted() {
+    // axios
+    //   .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    //   .then((response) => (this.info = response))
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${process.env.VUE_APP_FOOTBALL_API_KEY}`,
+      },
+    }
+
     axios
-      .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-      .then((response) => (this.info = response))
+      .get('http:localhost:8080/conferences', config)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error))
   },
 }
 </script>
